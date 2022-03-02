@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string.h>
 
-#include "15-1processpool.h"
+#include "processpool.h"
 
 class cgi_coon{
 public:

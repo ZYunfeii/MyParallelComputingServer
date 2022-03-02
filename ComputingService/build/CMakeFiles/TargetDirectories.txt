@@ -1,0 +1,3 @@
+/home/yunfei/MyProject/MyCGIServer/ComputingService/build/CMakeFiles/rebuild_cache.dir
+/home/yunfei/MyProject/MyCGIServer/ComputingService/build/CMakeFiles/ComputingSrv.dir
+/home/yunfei/MyProject/MyCGIServer/ComputingService/build/CMakeFiles/edit_cache.dir

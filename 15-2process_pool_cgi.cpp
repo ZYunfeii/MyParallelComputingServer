@@ -41,9 +41,7 @@ public:
             }else{
                 if(ret > 0){
                     printf("user content is: %s\n", m_buf);
-                    // char* file_name = m_buf;
-                    // std::cout<<ret<<std::endl;
-                    char* file_name = (char*)"/home/yunfei/MyProject/MyCGIServer/CGI";
+                    char* file_name = (char*)"/home/yunfei/MyProject/MyCGIServer/ComputingService/build/ComputingSrv";
                     if(access(file_name, F_OK) == -1){
                         std::cout<<"point2"<<std::endl;
                         removefd(m_epollfd, m_sockfd);
@@ -66,10 +64,13 @@ public:
                         char fd[128];
                         char epfd[128];
                         sprintf(fd, "%d", m_sockfd);
-                        sprintf(epfd, "%d", m_epollfd);                        
-                        execl(file_name, file_name, fd, epfd, (char*)0);     
+                        sprintf(epfd, "%d", m_epollfd); 
 
-                        const char* msg_send = "The CGI does not run!";               
+                        int flag = execl(file_name, file_name, fd, epfd, (char*)0);  
+                        if(flag < 0){
+                            const char* msg_send = "The ComputingSrv does not run!"; 
+                            printf("%s\n",msg_send); 
+                        }                    
                         exit(0);
                     }
                 }else printf("no receive");

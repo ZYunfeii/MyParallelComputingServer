@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/ComputingSrv.dir/src/main.cpp.o CMakeFiles/ComputingSrv.dir/src/myinverse.cpp.o CMakeFiles/ComputingSrv.dir/src/myinverse_initialize.cpp.o CMakeFiles/ComputingSrv.dir/src/myinverse_terminate.cpp.o  -o ComputingSrv 

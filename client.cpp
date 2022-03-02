@@ -31,6 +31,7 @@ void addfd( int epollfd, int fd )
     setnonblocking( fd );
 }
 
+
 int main(int argc, char* argv[]){
     if(argc <= 2){
         printf("argc in not enough");
@@ -79,7 +80,9 @@ int main(int argc, char* argv[]){
                     if(ret < 0){
                         if(errno != EAGAIN) printf("ERROR\n");
                         break; 
-                    }else if(ret > 0) printf("%s\n", buf);
+                    }else if(ret > 0){
+                        printf("%s\n", buf);
+                    } 
                 }
             }
         }      

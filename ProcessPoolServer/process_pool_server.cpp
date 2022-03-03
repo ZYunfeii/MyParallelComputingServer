@@ -15,8 +15,10 @@
 #include <sys/stat.h>
 #include <iostream>
 #include <string.h>
-
 #include "processpool.h"
+
+constexpr static const char* file_name =  
+"/home/yunfei/MyProject/MyParallelComputingServer/ComputingService/build/ComputingSrv";
 
 class cgi_coon{
 public:
@@ -27,7 +29,6 @@ public:
         m_sockfd = sockfd;
         m_address = client_addr;
         memset(m_buf, '\0', BUFFER_SIZE);
-        m_read_idx = 0; // mark the next position of the last byte of user data that has been read in the read buffer
     }
 
     void process(){
@@ -41,7 +42,6 @@ public:
             }else{
                 if(ret > 0){
                     printf("user content is: %s\n", m_buf);
-                    char* file_name = (char*)"/home/yunfei/MyProject/MyCGIServer/ComputingService/build/ComputingSrv";
                     if(access(file_name, F_OK) == -1){
                         std::cout<<"point2"<<std::endl;
                         removefd(m_epollfd, m_sockfd);
